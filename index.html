@@ -149,22 +149,24 @@
 
     function init() {
       try {
-        tg = window.Telegram?.WebApp;
+        tg = window.Telegram && window.Telegram.WebApp;
         if (tg) {
           tg.ready();
           tg.expand();
 
           // Display user info
-          const user = tg.initDataUnsafe?.user;
+          var user = tg.initDataUnsafe && tg.initDataUnsafe.user;
           if (user) {
             document.getElementById('userInfo').style.display = 'flex';
             document.getElementById('userName').textContent = user.first_name + (user.last_name ? ' ' + user.last_name : '');
             document.getElementById('userId').textContent = '@' + (user.username || 'id' + user.id);
             document.getElementById('userAvatar').textContent = (user.first_name || '?')[0].toUpperCase();
           }
+        } else {
+          showStatus('❌ Запустите через Telegram', 'error');
         }
       } catch(e) {
-        console.log('Mini app running outside Telegram');
+        showStatus('❌ Ошибка: ' + e.message, 'error');
       }
     }
 
