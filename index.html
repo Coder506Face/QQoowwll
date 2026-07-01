@@ -16,193 +16,235 @@
       flex-direction: column;
       padding: 16px;
     }
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    h1 {
-      font-size: 22px;
-      margin-bottom: 4px;
-      color: var(--tg-theme-text-color, #fff);
-    }
-    .subtitle {
-      font-size: 13px;
-      color: var(--tg-theme-hint-color, #888);
-      margin-bottom: 20px;
-    }
+    .container { max-width: 400px; margin: 0 auto; width: 100%; flex: 1; display: flex; flex-direction: column; }
+    h1 { font-size: 22px; margin-bottom: 4px; color: var(--tg-theme-text-color, #fff); }
+    .subtitle { font-size: 13px; color: var(--tg-theme-hint-color, #888); margin-bottom: 20px; }
     .card {
       background: var(--tg-theme-secondary-bg-color, #16213e);
-      border-radius: 14px;
-      padding: 20px;
-      margin-bottom: 12px;
+      border-radius: 14px; padding: 20px; margin-bottom: 12px;
     }
-    .card h2 {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    .card p {
-      font-size: 13px;
-      color: var(--tg-theme-hint-color, #999);
-      margin-bottom: 14px;
-      line-height: 1.5;
-    }
+    .card h2 { font-size: 16px; margin-bottom: 10px; }
+    .card p { font-size: 13px; color: var(--tg-theme-hint-color, #999); margin-bottom: 14px; line-height: 1.5; }
     .btn {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 10px;
-      font-size: 15px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s;
-      text-align: center;
-      margin-bottom: 8px;
+      display: block; width: 100%; padding: 12px; border: none;
+      border-radius: 10px; font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; text-align: center; margin-bottom: 8px;
+      font-family: inherit;
     }
     .btn:active { transform: scale(0.97); }
-    .btn-primary {
-      background: var(--tg-theme-button-color, #c9a84c);
-      color: var(--tg-theme-button-text-color, #000);
+    .btn-primary { background: var(--tg-theme-button-color, #c9a84c); color: var(--tg-theme-button-text-color, #000); }
+    .btn-success { background: #22c55e; color: #fff; }
+    .btn-secondary { background: #333; color: #ccc; border: 1px solid #555; }
+    .btn-link { background: transparent; color: var(--tg-theme-link-color, #6ab2f2); text-decoration: underline; }
+
+    .status-box {
+      margin-top: 8px; padding: 10px; border-radius: 10px;
+      font-size: 13px; text-align: center; display: none;
     }
-    .btn-secondary {
-      background: var(--tg-theme-secondary-bg-color, #2a2a4a);
-      color: var(--tg-theme-text-color, #ccc);
-      border: 1px solid var(--tg-theme-hint-color, #333);
-    }
-    .btn-success {
-      background: #22c55e;
-      color: #fff;
-    }
-    #status {
-      margin-top: 12px;
-      padding: 10px;
-      border-radius: 10px;
-      font-size: 13px;
-      text-align: center;
-      display: none;
-    }
-    #status.show { display: block; }
-    #status.success { background: rgba(34,197,94,0.15); color: #22c55e; }
-    #status.error { background: rgba(239,68,68,0.15); color: #ef4444; }
+    .status-box.show { display: block; }
+    .status-box.good { background: rgba(34,197,94,0.15); color: #22c55e; }
+    .status-box.bad { background: rgba(239,68,68,0.15); color: #ef4444; }
+    .status-box.info { background: rgba(96,165,250,0.15); color: #60a5fa; }
+
     .user-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
+      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
       background: var(--tg-theme-secondary-bg-color, #16213e);
-      border-radius: 10px;
-      margin-bottom: 16px;
+      border-radius: 10px; margin-bottom: 16px;
     }
     .user-avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      width: 40px; height: 40px; border-radius: 50%;
       background: var(--tg-theme-button-color, #c9a84c);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: #000;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; color: #000; flex-shrink: 0;
     }
-    .footer {
-      margin-top: auto;
-      padding-top: 20px;
-      text-align: center;
-      font-size: 11px;
-      color: var(--tg-theme-hint-color, #555);
+    .debug-box {
+      font-size: 11px; color: #888; word-break: break-all;
+      background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px;
+      margin-top: 8px; display: none; font-family: monospace;
     }
+    input {
+      width: 100%; padding: 10px; border-radius: 10px;
+      border: 1px solid var(--tg-theme-hint-color, #333);
+      background: var(--tg-theme-secondary-bg-color, #16213e);
+      color: var(--tg-theme-text-color, #e0e0e0);
+      font-size: 14px; font-family: inherit; margin-bottom: 8px; outline: none;
+    }
+    .footer { margin-top: 10px; text-align: center; font-size: 11px; color: var(--tg-theme-hint-color, #555); }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="user-info" id="userInfo" style="display:none">
+    <div id="userInfoRow" class="user-info" style="display:none">
       <div class="user-avatar" id="userAvatar">?</div>
       <div>
         <div id="userName" style="font-weight:600;font-size:14px"></div>
-        <div id="userId" style="font-size:12px;color:var(--tg-theme-hint-color,#888)"></div>
+        <div id="userId" style="font-size:12px;color:#888"></div>
       </div>
     </div>
 
     <h1>🎮 QOWL Mini</h1>
     <p class="subtitle">Мини-приложение QOWL Bot</p>
 
+    <div id="statusInit" class="status-box info show">⏳ Загрузка...</div>
+
     <div class="card">
-      <h2>📨 Тест отправки</h2>
-      <p>Нажми кнопку, чтобы отправить сообщение в чат с ботом.</p>
-      <button class="btn btn-primary" onclick="sendTest()">📩 Отправить тест</button>
+      <h2>📨 Отправить тест</h2>
+      <p>Проверка связи с ботом через Telegram WebApp.</p>
+      <button class="btn btn-primary" onclick="sendTest()">📩 Отправить</button>
     </div>
 
     <div class="card">
       <h2>📝 Свой текст</h2>
-      <p>Напиши что-нибудь и отправь в чат.</p>
-      <input id="customText" type="text" placeholder="Введите текст..." style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--tg-theme-hint-color,#333);background:var(--tg-theme-secondary-bg-color,#16213e);color:var(--tg-theme-text-color,#e0e0e0);font-size:14px;font-family:inherit;margin-bottom:8px;outline:none">
-      <button class="btn btn-secondary" onclick="sendCustom()">📤 Отправить текст</button>
+      <p>Напишите что-нибудь и отправьте боту.</p>
+      <input id="customText" placeholder="Введите текст...">
+      <button class="btn btn-success" onclick="sendCustom()">📤 Отправить текст</button>
     </div>
 
-    <div id="status"></div>
+    <div class="card">
+      <h2>🔗 Запасной способ</h2>
+      <p>Если кнопки выше не работают — отправь команду боту вручную.</p>
+      <button class="btn btn-secondary" onclick="copyCommand()">📋 Копировать команду</button>
+      <button class="btn btn-link" onclick="openBotLink()">➡️ Открыть чат с ботом</button>
+    </div>
+
+    <div class="status-box" id="statusMsg"></div>
+    <div class="debug-box" id="debugBox"></div>
     <div class="footer">QOWL Bot — Mini App</div>
   </div>
 
   <script>
-    let tg = null;
+    var tg = null;
+    var user = null;
+    var BOT_USERNAME = 'qowlc_bot';
+
+    function debug(text) {
+      var el = document.getElementById('debugBox');
+      el.style.display = 'block';
+      el.textContent += '\n[' + new Date().toLocaleTimeString() + '] ' + text;
+    }
+
+    function setStatus(text, type) {
+      var el = document.getElementById('statusMsg');
+      el.textContent = text;
+      el.className = 'status-box show ' + type;
+    }
+
+    function clearStatus() {
+      document.getElementById('statusMsg').className = 'status-box';
+    }
 
     function init() {
       try {
-        tg = window.Telegram && window.Telegram.WebApp;
-        if (tg) {
+        debug('window.Telegram: ' + (typeof window.Telegram));
+        if (window.Telegram && window.Telegram.WebApp) {
+          tg = window.Telegram.WebApp;
           tg.ready();
           tg.expand();
+          debug('WebApp version: ' + (tg.version || 'unknown'));
+          debug('initData length: ' + (tg.initData ? tg.initData.length : 0));
 
-          // Display user info
-          var user = tg.initDataUnsafe && tg.initDataUnsafe.user;
+          user = tg.initDataUnsafe && tg.initDataUnsafe.user;
           if (user) {
-            document.getElementById('userInfo').style.display = 'flex';
+            document.getElementById('userInfoRow').style.display = 'flex';
             document.getElementById('userName').textContent = user.first_name + (user.last_name ? ' ' + user.last_name : '');
             document.getElementById('userId').textContent = '@' + (user.username || 'id' + user.id);
             document.getElementById('userAvatar').textContent = (user.first_name || '?')[0].toUpperCase();
+            debug('User: ' + user.id + ' @' + (user.username || 'no_username'));
+            document.getElementById('statusInit').className = 'status-box show good';
+            document.getElementById('statusInit').textContent = '✅ Авторизован: ' + user.first_name;
+          } else {
+            document.getElementById('statusInit').className = 'status-box show info';
+            document.getElementById('statusInit').textContent = '⚠️ Нет данных пользователя (возможно WebView не от Telegram)';
+            debug('No user data in initDataUnsafe');
           }
         } else {
-          showStatus('❌ Запустите через Telegram', 'error');
+          document.getElementById('statusInit').className = 'status-box show bad';
+          document.getElementById('statusInit').textContent = '❌ Не удалось подключиться к Telegram WebApp';
+          debug('WebApp not available');
         }
       } catch(e) {
-        showStatus('❌ Ошибка: ' + e.message, 'error');
+        document.getElementById('statusInit').className = 'status-box show bad';
+        document.getElementById('statusInit').textContent = '❌ Ошибка: ' + e.message;
+        debug('Error: ' + e.message);
       }
     }
 
-    function showStatus(text, type) {
-      const el = document.getElementById('status');
-      el.textContent = text;
-      el.className = 'show ' + type;
-      setTimeout(() => el.classList.remove('show'), 3000);
-    }
-
     function sendTest() {
-      if (tg) {
-        tg.sendData(JSON.stringify({ action: 'test', message: 'Привет из мини-приложения! 🎉' }));
-        showStatus('✅ Отправлено!', 'success');
-      } else {
-        showStatus('❌ Запустите через Telegram', 'error');
+      clearStatus();
+      if (!tg) {
+        setStatus('❌ Telegram WebApp не доступен. Используй запасной способ.', 'bad');
+        return;
+      }
+      try {
+        tg.sendData(JSON.stringify({ action: 'test', message: 'Привет из мини-приложения!' }));
+        setStatus('✅ Данные отправлены! Бот ответит в чате.', 'good');
+      } catch(e) {
+        setStatus('❌ Ошибка отправки: ' + e.message, 'bad');
+        debug('sendData error: ' + e.message);
       }
     }
 
     function sendCustom() {
-      const input = document.getElementById('customText');
-      const text = input.value.trim();
+      var input = document.getElementById('customText');
+      var text = input.value.trim();
       if (!text) {
-        showStatus('❌ Введите текст', 'error');
+        setStatus('❌ Введите текст', 'bad');
         return;
       }
-      if (tg) {
+      if (!tg) {
+        setStatus('❌ Telegram WebApp не доступен. Используй запасной способ.', 'bad');
+        return;
+      }
+      try {
         tg.sendData(JSON.stringify({ action: 'test', message: text }));
         input.value = '';
-        showStatus('✅ Отправлено!', 'success');
-      } else {
-        showStatus('❌ Запустите через Telegram', 'error');
+        setStatus('✅ Отправлено! Бот ответит в чате.', 'good');
+      } catch(e) {
+        setStatus('❌ Ошибка отправки: ' + e.message, 'bad');
       }
     }
 
-    init();
+    function copyCommand() {
+      var text = '/start mini_app_test';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function() {
+          setStatus('✅ Команда скопирована. Вставь в чат с ботом.', 'good');
+        }).catch(function() {
+          fallbackCopy(text);
+        });
+      } else {
+        fallbackCopy(text);
+      }
+    }
+
+    function fallbackCopy(text) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      setStatus('✅ Команда скопирована. Вставь в чат с ботом.', 'good');
+    }
+
+    function openBotLink() {
+      if (tg && tg.openTelegramLink) {
+        tg.openTelegramLink('https://t.me/' + BOT_USERNAME);
+      } else {
+        window.open('https://t.me/' + BOT_USERNAME, '_blank');
+      }
+    }
+
+    // Wait for WebApp script to load then init
+    if (document.readyState === 'complete') {
+      init();
+    } else {
+      window.addEventListener('load', init);
+    }
+    // Fallback: try again after 2s
+    setTimeout(function() {
+      if (!tg) init();
+    }, 2000);
   </script>
 </body>
 </html>
